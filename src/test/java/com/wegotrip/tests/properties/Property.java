@@ -2,7 +2,7 @@ package com.wegotrip.tests.properties;
 
 public class Property {
     public static String browser() {
-        return System.getProperty("browser", "edge");
+        return System.getProperty("browser", "chrome");
     }
 
     public static String browserVersion() {
