@@ -22,25 +22,17 @@ public class RegistrationFormTest {
     static void configure() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+
+        Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.holdBrowserOpen = false;
-
-        //System.setProperty("browser","chrome");
-        Configuration.browser = System.getProperty("browser", "chrome");
-
-        //System.setProperty("browser_version","105");
-        Configuration.browserVersion = System.getProperty("browser_version", "100");
-
-        //System.setProperty("browser_size","1920x1080");
-        Configuration.browserSize = System.getProperty("browser_size","800x600");
-
-        String remoteUrl = System.getProperty("remote_url");
-        if (remoteUrl != null) {
-            Configuration.remote = remoteUrl;
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("enableVNC", true);
-            capabilities.setCapability("enableVideo", true);
-            Configuration.browserCapabilities = capabilities;
+        Configuration.browser = Property.browser();
+        Configuration.browserVersion = Property.browserVersion();
+        Configuration.browserSize = Property.browserSize();
+        if (!Property.remoteUrl().equals("")) {
+            Configuration.remote = Property.remoteUrl();
         }
     }
 
