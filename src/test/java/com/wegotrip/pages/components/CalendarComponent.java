@@ -1,6 +1,7 @@
 package com.wegotrip.pages.components;
 
 import static com.codeborne.selenide.Selenide.*;
+
 public class CalendarComponent {
 
     public CalendarComponent setDate(String day, String month, String year) {

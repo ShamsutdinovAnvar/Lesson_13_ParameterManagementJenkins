@@ -13,6 +13,7 @@ public class ResultComponent {
         $("#example-modal-sizes-title-lg").shouldHave(text(TITLE_TEXT));
 
     }
+
     public void checkResult(String key, String value) {
         $(".table-responsive table")
                 .$(byText(key)).parent().shouldHave(text(value));
