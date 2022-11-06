@@ -9,8 +9,8 @@
     enableChart: true
   },
   telegram: {
-    token: "5561005801:AAEuxdr9sH_eo-QbLFKPSPjnmDm9suoiVFk",
-    chat: "-1001557959414",
+    token: "xxxxxxxxxxxxx",
+    chat: "xxxxxxxxx",
     replyTo: ""
   }
 }
